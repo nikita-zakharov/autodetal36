@@ -16,7 +16,8 @@
         --muted: #667482;
         --line: #e0e6ec;
         --navy: #244c70;
-        --amber: #e6a94e;
+        --amber: #ffba53;
+        --soft-bg: #eaf0f5;
         --max: 1160px;
       }
       * {
@@ -115,7 +116,17 @@
       }
       .btn-primary {
         background: var(--amber);
-        color: #26313a;
+        color: var(--navy);
+      }
+      .btn-icon {
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+      }
+      .btn-icon-phone {
+        background-color: var(--navy);
+        -webkit-mask: url("assets/icons/phone.svg") center / contain no-repeat;
+        mask: url("assets/icons/phone.svg") center / contain no-repeat;
       }
       .btn-primary:hover {
         background: #f0bd69;
@@ -135,7 +146,7 @@
         padding: 76px 0 70px;
         background:
           radial-gradient(ellipse at 82% 42%, #e6a94e25, transparent 38%),
-          linear-gradient(115deg, #f7f9fb 30%, #eaf0f5 100%);
+          linear-gradient(115deg, #f7f9fb 30%, var(--soft-bg) 100%);
       }
       .hero:after {
         content: "";
@@ -160,7 +171,7 @@
         position: relative;
         z-index: 1;
         display: grid;
-        grid-template-columns: 1.05fr 0.95fr;
+        grid-template-columns: 1fr;
         gap: 54px;
         align-items: center;
       }
@@ -224,121 +235,6 @@
         color: #2b8068;
         font-weight: 900;
       }
-      .bot-card {
-        justify-self: end;
-        width: min(100%, 440px);
-        padding: 19px;
-        border: 1px solid #dbe3eb;
-        background: #fff;
-        border-radius: 24px;
-        box-shadow: 0 25px 70px #263d5018;
-      }
-      .bot-head {
-        display: flex;
-        align-items: center;
-        gap: 11px;
-        padding: 3px 3px 16px;
-        border-bottom: 1px solid #edf0f3;
-      }
-      .bot-avatar {
-        width: 43px;
-        height: 43px;
-        border-radius: 14px;
-        background: var(--navy);
-        display: grid;
-        place-items: center;
-        color: #fff;
-        font-size: 22px;
-      }
-      .bot-head strong {
-        display: block;
-      }
-      .bot-head small {
-        color: var(--muted);
-        font-size: 12px;
-      }
-      .online {
-        margin-left: auto;
-        color: #2b8068;
-        font-size: 11px;
-      }
-      .chat {
-        padding: 18px 2px 4px;
-      }
-      .bubble {
-        max-width: 95%;
-        padding: 14px 15px;
-        background: #f1f5f8;
-        border: 1px solid #e8edf1;
-        border-radius: 5px 16px 16px 16px;
-        font-size: 13px;
-        line-height: 1.6;
-      }
-      .bubble strong {
-        display: block;
-        margin-bottom: 7px;
-        font-size: 14px;
-      }
-      .bubble ul {
-        padding-left: 18px;
-        margin: 7px 0;
-      }
-      .bubble li {
-        margin: 3px 0;
-      }
-      .chat-buttons {
-        display: grid;
-        gap: 8px;
-        margin-top: 13px;
-      }
-      .chat-button {
-        padding: 11px;
-        border: 1px solid #cbd8e3;
-        border-radius: 10px;
-        text-align: center;
-        color: var(--navy);
-        font-size: 13px;
-        font-weight: 750;
-        background: #fff;
-      }
-      .chat-note {
-        color: #8a96a2;
-        font-size: 10px;
-        margin: 13px 2px 0;
-      }
-      .stats {
-        border-top: 1px solid var(--line);
-        border-bottom: 1px solid var(--line);
-        background: #fff;
-      }
-      .stats-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-      }
-      .stat {
-        padding: 22px 24px;
-        border-right: 1px solid var(--line);
-        display: flex;
-        align-items: center;
-        gap: 14px;
-      }
-      .stat:first-child {
-        padding-left: 0;
-      }
-      .stat:last-child {
-        border: 0;
-      }
-      .stat strong {
-        font-size: 23px;
-        letter-spacing: -0.04em;
-        color: var(--navy);
-      }
-      .stat span {
-        display: block;
-        color: var(--muted);
-        font-size: 12px;
-        line-height: 1.4;
-      }
       .section {
         padding: 78px 0;
       }
@@ -364,6 +260,9 @@
         margin: 0;
         font-size: 16px;
       }
+      #advantages {
+        background: var(--soft-bg);
+      }
       .benefits {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -381,7 +280,7 @@
         width: 44px;
         height: 44px;
         border-radius: 12px;
-        background: #eaf0f5;
+        background: var(--soft-bg);
         color: var(--navy);
         display: grid;
         place-items: center;
@@ -432,7 +331,7 @@
         font-weight: 750;
       }
       .steps {
-        background: #eaf0f5;
+        background: var(--soft-bg);
       }
       .steps-list {
         max-width: 820px;
@@ -482,10 +381,20 @@
         margin: 0;
         max-width: 650px;
       }
-      .locations {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 16px;
+      .location-switcher {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 16px;
+      }
+      .location-switcher .btn {
+        font-family: inherit;
+        white-space: normal;
+      }
+      .location-switcher .btn[aria-pressed="true"] {
+        background: var(--navy);
+        border-color: var(--navy);
+        color: #fff;
       }
       .location {
         border: 1px solid var(--line);
@@ -497,12 +406,9 @@
       .location-map {
         display: block;
         width: 100%;
-        height: 320px;
+        height: 360px;
         border: 0;
-        background: #eaf0f5;
-      }
-      .location-body {
-        padding: 22px;
+        background: var(--soft-bg);
       }
       .location h3 {
         margin: 0 0 8px;
@@ -577,10 +483,6 @@
           width: 100%;
           opacity: 0.12;
         }
-        .bot-card {
-          justify-self: start;
-          width: min(100%, 540px);
-        }
         .hero {
           padding: 58px 0;
         }
@@ -592,12 +494,6 @@
         }
         .navright .phone {
           display: none;
-        }
-        .stat {
-          padding: 20px 14px;
-        }
-        .stat strong {
-          font-size: 20px;
         }
         .cta-panel {
           align-items: flex-start;
@@ -638,26 +534,10 @@
           gap: 10px;
           flex-direction: column;
         }
-        .bot-card {
-          padding: 15px;
-        }
-        .stats-grid {
-          grid-template-columns: 1fr;
-        }
-        .stat,
-        .stat:first-child {
-          padding: 14px 0;
-          border-right: 0;
-          border-bottom: 1px solid var(--line);
-        }
-        .stat:last-child {
-          border-bottom: 0;
-        }
         .section {
           padding: 58px 0;
         }
-        .benefits,
-        .locations {
+        .benefits {
           grid-template-columns: 1fr;
         }
         .benefit {
@@ -728,7 +608,8 @@
       body {
         overflow-x: hidden;
       }
-      a:focus-visible {
+      a:focus-visible,
+      button:focus-visible {
         outline: 3px solid var(--focus);
         outline-offset: 3px;
       }
@@ -875,23 +756,27 @@
         >
         <nav aria-label="Разделы сайта" class="navlinks">
           <a href="#advantages">Преимущества</a
-          ><a href="#brands">Марки автомобилей</a
-          ><a href="#how">Как проходит заказ</a
-          ><a href="#pickup">Наши адреса</a>
+          ><a href="#how">Как проходит заказ</a><a href="#pickup">Самовывоз</a>
         </nav>
         <div class="navright">
           <a
-            class="btn btn-ghost"
+            class="btn btn-primary"
             href="#contacts"
             title="Контакты будут добавлены перед публикацией"
+            ><span class="btn-icon btn-icon-phone" aria-hidden="true"></span
             >Позвонить</a
           ><a
-            class="btn btn-primary"
+            class="btn btn-ghost"
             href="#contacts"
             rel="noreferrer"
             target="_blank"
             title="Контакты будут добавлены перед публикацией"
-            >Написать в MAX ↗</a
+            ><img
+              class="btn-icon"
+              src="assets/icons/MAX.svg"
+              alt=""
+              aria-hidden="true"
+            />Написать в MAX</a
           >
         </div>
       </div>
@@ -913,14 +798,20 @@
                 class="btn btn-primary"
                 href="#contacts"
                 title="Контакты будут добавлены перед публикацией"
-                >Позвонить ↗</a
+                ><span class="btn-icon btn-icon-phone" aria-hidden="true"></span
+                >Позвонить</a
               ><a
                 class="btn btn-ghost"
                 href="#contacts"
                 rel="noreferrer"
                 target="_blank"
                 title="Контакты будут добавлены перед публикацией"
-                >Написать в MAX</a
+                ><img
+                  class="btn-icon"
+                  src="assets/icons/MAX.svg"
+                  alt=""
+                  aria-hidden="true"
+                />Написать в MAX</a
               >
             </div>
             <div class="micro">
@@ -930,57 +821,6 @@
                 ><b class="check">✓</b> Проверяем совместимость по VIN</span
               >
             </div>
-          </div>
-          <div
-            aria-label="Пример приветственного сообщения MAX-бота"
-            class="bot-card"
-          >
-            <div class="bot-head">
-              <div class="bot-avatar">А</div>
-              <div>
-                <strong>АвтоДеталь36</strong
-                ><small>Бот для заказа автозапчастей</small>
-              </div>
-              <span class="online">● пример интерфейса</span>
-            </div>
-            <div class="chat">
-              <div class="bubble">
-                <strong>Привет! Поможем заказать запчасть 👋</strong>Расскажите,
-                какая деталь нужна и для какого автомобиля. Проверим
-                совместимость, сравним предложения и сообщим цену.
-                <ul>
-                  <li>Поиск по каталогам поставщиков</li>
-                  <li>Сравнение доступных цен</li>
-                  <li>Информация о получении заказа</li>
-                </ul>
-                Выберите, с чего начнём:
-              </div>
-              <div class="chat-buttons">
-                <div aria-hidden="true" class="chat-button">
-                  ⌕ Найти автозапчасть
-                </div>
-                <div aria-hidden="true" class="chat-button">
-                  ♧ Связаться с менеджером
-                </div>
-              </div>
-              <p class="chat-note">
-                Визуальный макет приветствия — не скриншот работающего бота.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="stats">
-        <div class="wrap stats-grid">
-          <div class="stat">
-            <strong>Каталоги</strong><span>Ищем у разных<br />поставщиков</span>
-          </div>
-          <div class="stat">
-            <strong>По VIN</strong
-            ><span>Проверяем совместимость<br />перед согласованием</span>
-          </div>
-          <div class="stat">
-            <strong>2 адреса</strong><span>Воронеж<br />и Новая Усмань</span>
           </div>
         </div>
       </section>
@@ -996,7 +836,15 @@
           </div>
           <div class="benefits">
             <article class="benefit">
-              <div class="iconbox">⌕</div>
+              <div class="iconbox">
+                <img
+                  src="assets/icons/search.svg"
+                  width="24"
+                  height="24"
+                  alt=""
+                  aria-hidden="true"
+                />
+              </div>
               <h3>Ищем по каталогам поставщиков</h3>
               <p>
                 Проверяем доступные предложения в разных каталогах, чтобы найти
@@ -1012,7 +860,15 @@
               </p>
             </article>
             <article class="benefit">
-              <div class="iconbox">✓</div>
+              <div class="iconbox">
+                <img
+                  src="assets/icons/check-circle.svg"
+                  width="24"
+                  height="24"
+                  alt=""
+                  aria-hidden="true"
+                />
+              </div>
               <h3>Проверяем совместимость по VIN</h3>
               <p>
                 Уточняем данные автомобиля и проверяем, подходит ли запчасть,
@@ -1134,7 +990,7 @@
             <article class="step">
               <div class="step-number">01</div>
               <div class="step-content">
-                <h3>Оставляете заявку</h3>
+                <h3>Оставляете запрос (чат/звонок)</h3>
                 <p>
                   Пишите в MAX или звоните. Сообщаете, какая запчасть нужна и
                   для какого автомобиля.
@@ -1144,7 +1000,7 @@
             <article class="step">
               <div class="step-number">02</div>
               <div class="step-content">
-                <h3>Ищем запчасть в каталогах</h3>
+                <h3>Подбираем варианты и проверяем совместимость</h3>
                 <p>
                   Проверяем совместимость по VIN и сравниваем доступные
                   предложения поставщиков по цене и времени получения.
@@ -1154,30 +1010,10 @@
             <article class="step">
               <div class="step-number">03</div>
               <div class="step-content">
-                <h3>Согласуем заказ</h3>
+                <h3>Согласовываем цену и срок</h3>
                 <p>
                   Сообщаем стоимость и ориентировочное время получения. Вы
                   подтверждаете подходящий вариант.
-                </p>
-              </div>
-            </article>
-            <article class="step">
-              <div class="step-number">04</div>
-              <div class="step-content">
-                <h3>Оплачиваете заказ</h3>
-                <p>
-                  После согласования стоимости и условий заказа переходим к
-                  оплате.
-                </p>
-              </div>
-            </article>
-            <article class="step">
-              <div class="step-number">05</div>
-              <div class="step-content">
-                <h3>Получаете запчасть</h3>
-                <p>
-                  Сообщим, когда запчасть будет готова к получению по
-                  согласованному адресу.
                 </p>
               </div>
             </article>
@@ -1187,58 +1023,47 @@
       <section class="section" id="pickup">
         <div class="wrap">
           <div class="section-head">
-            <div class="kicker">Наши адреса</div>
+            <div class="kicker">Самовывоз</div>
             <h2>Где получить заказ</h2>
             <p>Согласуем удобное место получения при оформлении заказа.</p>
           </div>
-          <div class="locations">
-            <article class="location">
-              <iframe
-                class="location-map"
-                src="https://yandex.ru/map-widget/v1/?mode=search&amp;text=%D0%92%D0%BE%D1%80%D0%BE%D0%BD%D0%B5%D0%B6%2C+%D1%83%D0%BB%D0%B8%D1%86%D0%B0+%D0%A1%D0%B0%D0%B2%D1%80%D0%B0%D1%81%D0%BE%D0%B2%D0%B0%2C+86&amp;z=16"
-                title="Пункт получения в Воронеже: улица Саврасова, 86"
-                width="560"
-                height="320"
-                loading="lazy"
-                allowfullscreen
-                referrerpolicy="no-referrer-when-downgrade"
-              ></iframe>
-              <div class="location-body">
-                <h3>Воронеж</h3>
-                <p>ул. Саврасова, 86, офис 2</p>
-                <a
-                  class="btn btn-ghost"
-                  href="https://yandex.ru/maps/?text=%D0%92%D0%BE%D1%80%D0%BE%D0%BD%D0%B5%D0%B6%2C+%D1%83%D0%BB%D0%B8%D1%86%D0%B0+%D0%A1%D0%B0%D0%B2%D1%80%D0%B0%D1%81%D0%BE%D0%B2%D0%B0%2C+86"
-                  rel="noreferrer"
-                  target="_blank"
-                  >Открыть на карте ↗</a
-                >
-              </div>
-            </article>
-            <article class="location">
-              <iframe
-                class="location-map"
-                src="https://yandex.ru/map-widget/v1/?mode=search&amp;text=%D0%9D%D0%BE%D0%B2%D0%B0%D1%8F+%D0%A3%D1%81%D0%BC%D0%B0%D0%BD%D1%8C%2C+%D1%83%D0%BB%D0%B8%D1%86%D0%B0+%D0%9B%D0%B5%D0%BD%D0%B8%D0%BD%D0%B0%2C+177&amp;z=16"
-                title="Пункт получения в Новой Усмани: улица Ленина, 177"
-                width="560"
-                height="320"
-                loading="lazy"
-                allowfullscreen
-                referrerpolicy="no-referrer-when-downgrade"
-              ></iframe>
-              <div class="location-body">
-                <h3>Новая Усмань</h3>
-                <p>ул. Ленина, 177, офис 5</p>
-                <a
-                  class="btn btn-ghost"
-                  href="https://yandex.ru/maps/?text=%D0%9D%D0%BE%D0%B2%D0%B0%D1%8F+%D0%A3%D1%81%D0%BC%D0%B0%D0%BD%D1%8C%2C+%D1%83%D0%BB%D0%B8%D1%86%D0%B0+%D0%9B%D0%B5%D0%BD%D0%B8%D0%BD%D0%B0%2C+177"
-                  rel="noreferrer"
-                  target="_blank"
-                  >Открыть на карте ↗</a
-                >
-              </div>
-            </article>
+          <div
+            class="location-switcher"
+            role="group"
+            aria-label="Выберите пункт получения"
+          >
+            <button
+              class="btn btn-ghost"
+              type="button"
+              aria-pressed="true"
+              aria-controls="pickup-map"
+              data-location="0"
+            >
+              ул. Саврасова, 86, офис 2
+            </button>
+            <button
+              class="btn btn-ghost"
+              type="button"
+              aria-pressed="false"
+              aria-controls="pickup-map"
+              data-location="1"
+            >
+              ул. Ленина, 177, офис 5
+            </button>
           </div>
+          <article class="location">
+            <iframe
+              class="location-map"
+              id="pickup-map"
+              src="https://yandex.ru/map-widget/v1/?ll=39.217176%2C51.611271&amp;mode=search&amp;ol=geo&amp;ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgo1MjQ4NzczMTk2Ej_QoNC-0YHRgdC40Y8sINCS0L7RgNC-0L3QtdC2LCDRg9C70LjRhtCwINCh0LDQstGA0LDRgdC-0LLQsCwgODYiCg1i3hxCFfFxTkI%2C&amp;z=16.49"
+              title="Пункт получения в Воронеже: улица Саврасова, 86"
+              width="1160"
+              height="360"
+              loading="lazy"
+              allowfullscreen
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </article>
         </div>
       </section>
       <section class="cta" id="contacts">
@@ -1261,6 +1086,7 @@
                 class="btn btn-primary"
                 href="#contacts"
                 title="Контакты будут добавлены перед публикацией"
+                ><span class="btn-icon btn-icon-phone" aria-hidden="true"></span
                 >Позвонить ↗</a
               ><a
                 class="btn btn-ghost"
@@ -1268,7 +1094,12 @@
                 rel="noreferrer"
                 target="_blank"
                 title="Контакты будут добавлены перед публикацией"
-                >Написать в MAX</a
+                ><img
+                  class="btn-icon"
+                  src="assets/icons/MAX.svg"
+                  alt=""
+                  aria-hidden="true"
+                />Написать в MAX</a
               >
             </div>
           </div>
@@ -1290,6 +1121,7 @@
         class="btn btn-ghost"
         href="#contacts"
         title="Контакты будут добавлены перед публикацией"
+        ><span class="btn-icon btn-icon-phone" aria-hidden="true"></span
         >Позвонить</a
       ><a
         class="btn btn-primary"
@@ -1297,8 +1129,40 @@
         rel="noreferrer"
         target="_blank"
         title="Контакты будут добавлены перед публикацией"
-        >Написать в MAX</a
+        ><img
+          class="btn-icon"
+          src="assets/icons/MAX.svg"
+          alt=""
+          aria-hidden="true"
+        />Написать в MAX</a
       >
     </div>
+    <script>
+      const pickupLocations = [
+        {
+          city: "Воронеж",
+          address: "ул. Саврасова, 86, офис 2",
+          mapUrl: "https://yandex.ru/map-widget/v1/?ll=39.217176%2C51.611271&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgo1MjQ4NzczMTk2Ej_QoNC-0YHRgdC40Y8sINCS0L7RgNC-0L3QtdC2LCDRg9C70LjRhtCwINCh0LDQstGA0LDRgdC-0LLQsCwgODYiCg1i3hxCFfFxTkI%2C&z=16.49",
+        },
+        {
+          city: "Новая Усмань",
+          address: "ул. Ленина, 177, офис 5",
+          mapUrl: "https://yandex.ru/map-widget/v1/?ll=39.453421%2C51.663693&mode=whatshere&whatshere%5Bpoint%5D=39.448424%2C51.663550&whatshere%5Bzoom%5D=17&z=17.04",
+        },
+      ];
+      const locationButtons = document.querySelectorAll("[data-location]");
+      locationButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          if (button.getAttribute("aria-pressed") === "true") return;
+          const location = pickupLocations[Number(button.dataset.location)];
+          const map = document.getElementById("pickup-map");
+          map.src = location.mapUrl;
+          map.title = `Пункт получения: ${location.city}, ${location.address}`;
+          locationButtons.forEach((item) => {
+            item.setAttribute("aria-pressed", String(item === button));
+          });
+        });
+      });
+    </script>
   </body>
 </html>
