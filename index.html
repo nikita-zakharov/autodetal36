@@ -5,7 +5,7 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <title>АвтоДеталь36 — автозапчасти в Воронеже по выгодным ценам</title>
     <meta
-      content="Найдём автозапчасти по каталогам поставщиков, проверим совместимость по VIN и сравним доступные цены. Воронеж и Новая Усмань."
+      content="Найдём автозапчасти по каталогам поставщиков, проверим совместимость по VIN и сравним доступные цены. Воронеж."
       name="description"
     />
     <style>
@@ -48,8 +48,6 @@
         margin: auto;
       }
       .topbar {
-        position: sticky;
-        top: 0;
         z-index: 5;
         background: #ffffffed;
         border-bottom: 1px solid var(--line);
@@ -107,7 +105,7 @@
         align-items: center;
         justify-content: center;
         gap: 9px;
-        padding: 13px 19px;
+        padding: 8px 12px;
         border-radius: 12px;
         font-weight: 800;
         border: 1px solid transparent;
@@ -153,13 +151,13 @@
         position: absolute;
         right: -10%;
         top: 0;
-        width: 58%;
+        width: 70%;
         height: 100%;
         background:
           linear-gradient(90deg, #f5f7fa00, #f5f7fa80),
           url("https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1500&q=85")
             center/cover;
-        opacity: 0.2;
+        opacity: 0.4;
         mask-image: linear-gradient(
           90deg,
           transparent 0%,
@@ -381,21 +379,6 @@
         margin: 0;
         max-width: 650px;
       }
-      .location-switcher {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-        margin-bottom: 16px;
-      }
-      .location-switcher .btn {
-        font-family: inherit;
-        white-space: normal;
-      }
-      .location-switcher .btn[aria-pressed="true"] {
-        background: var(--navy);
-        border-color: var(--navy);
-        color: #fff;
-      }
       .location {
         border: 1px solid var(--line);
         border-radius: 17px;
@@ -420,7 +403,6 @@
         margin: 0 0 16px;
       }
       .location .btn {
-        padding: 11px 14px;
         font-size: 13px;
       }
       .cta {
@@ -431,15 +413,17 @@
         overflow: hidden;
         border-radius: 22px;
         padding: 42px;
-        background:
-          radial-gradient(ellipse at 100% 0%, #e6a94e25, transparent 45%),
-          linear-gradient(110deg, #edf2f6, #fff);
-        border: 1px solid #dce4eb;
+        background: var(--navy);
+        color: #f5f7fa;
+        border: 1px solid var(--navy);
         box-shadow: 0 12px 32px #233b5009;
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 30px;
+      }
+      .cta-panel .kicker {
+        color: #d5e3ef;
       }
       .cta-panel h2 {
         font-size: clamp(29px, 4vw, 42px);
@@ -449,8 +433,11 @@
       }
       .cta-panel p {
         margin: 0;
-        color: var(--muted);
+        color: #d5e3ef;
         max-width: 600px;
+      }
+      .cta-panel p + .actions {
+        margin-top: 24px;
       }
       .footer {
         border-top: 1px solid var(--line);
@@ -475,10 +462,6 @@
         .hero-grid {
           grid-template-columns: 1fr;
           gap: 34px;
-        }
-        .hero:after {
-          width: 100%;
-          opacity: 0.12;
         }
         .hero {
           padding: 58px 0;
@@ -512,7 +495,6 @@
           height: 36px;
         }
         .navright .btn {
-          padding: 10px 11px;
           font-size: 12px;
         }
         .hero {
@@ -577,7 +559,7 @@
         --focus: #1e5f93;
       }
       html {
-        scroll-padding-top: 90px;
+        scroll-padding-top: 0;
       }
       body {
         overflow-x: hidden;
@@ -588,7 +570,6 @@
         outline-offset: 3px;
       }
       .btn {
-        min-height: 46px;
         white-space: nowrap;
         line-height: 1.2;
         text-align: center;
@@ -623,8 +604,6 @@
         gap: 8px;
       }
       .navright .btn {
-        min-height: 44px;
-        padding: 11px 12px;
         font-size: 13px;
       }
       .brand-tile {
@@ -636,11 +615,6 @@
       }
       .chat-button {
         cursor: default;
-      }
-      .contact-note {
-        font-size: 12px !important;
-        color: #667482 !important;
-        margin-top: 12px !important;
       }
       .skip-link {
         position: absolute;
@@ -660,17 +634,10 @@
         }
       }
       @media (max-width: 650px) {
-        .topbar {
-          position: static;
-        }
-        html {
-          scroll-padding-top: 0;
-        }
         .navright {
           display: none;
         }
         .navright .btn {
-          padding: 10px 12px;
           font-size: 12px;
         }
         .brand {
@@ -692,7 +659,6 @@
         }
         .navright .btn {
           font-size: 11px;
-          padding-inline: 9px;
         }
         h1 {
           font-size: 36px;
@@ -754,7 +720,7 @@
         <div class="wrap hero-grid">
           <div>
             <div class="eyebrow">
-              <span class="dot"></span> Воронеж · Новая Усмань
+              <span class="dot"></span> Воронеж
             </div>
             <h1>Найдём нужную автозапчасть <em>по выгодной цене</em></h1>
             <p class="lead">
@@ -993,31 +959,7 @@
           <div class="section-head">
             <div class="kicker">Самовывоз</div>
             <h2>Где получить заказ</h2>
-            <p>Согласуем удобное место получения при оформлении заказа.</p>
-          </div>
-          <div
-            class="location-switcher"
-            role="group"
-            aria-label="Выберите пункт получения"
-          >
-            <button
-              class="btn btn-ghost"
-              type="button"
-              aria-pressed="true"
-              aria-controls="pickup-map"
-              data-location="0"
-            >
-              ул. Саврасова, 86, офис 2
-            </button>
-            <button
-              class="btn btn-ghost"
-              type="button"
-              aria-pressed="false"
-              aria-controls="pickup-map"
-              data-location="1"
-            >
-              ул. Ленина, 177, офис 5
-            </button>
+            <p>Воронеж, ул. Саврасова, 86, офис 2.</p>
           </div>
           <article class="location">
             <iframe
@@ -1044,31 +986,27 @@
                 Сравним предложения поставщиков, сообщим цену и согласуем
                 удобный способ получения.
               </p>
-              <p class="contact-note">
-                Телефон и ссылка на MAX-бота появятся после согласования
-                контактных данных.
-              </p>
-            </div>
-            <div class="actions">
-              <a
-                class="btn btn-primary"
-                href="#contacts"
-                title="Контакты будут добавлены перед публикацией"
-                ><span class="btn-icon btn-icon-phone" aria-hidden="true"></span
-                >Позвонить ↗</a
-              ><a
-                class="btn btn-ghost"
-                href="#contacts"
-                rel="noreferrer"
-                target="_blank"
-                title="Контакты будут добавлены перед публикацией"
-                ><img
-                  class="btn-icon"
-                  src="assets/icons/MAX.svg"
-                  alt=""
-                  aria-hidden="true"
-                />Написать в MAX</a
-              >
+              <div class="actions">
+                <a
+                  class="btn btn-primary"
+                  href="#contacts"
+                  title="Контакты будут добавлены перед публикацией"
+                  ><span class="btn-icon btn-icon-phone" aria-hidden="true"></span
+                  >Позвонить ↗</a
+                ><a
+                  class="btn btn-ghost"
+                  href="#contacts"
+                  rel="noreferrer"
+                  target="_blank"
+                  title="Контакты будут добавлены перед публикацией"
+                  ><img
+                    class="btn-icon"
+                    src="assets/icons/MAX.svg"
+                    alt=""
+                    aria-hidden="true"
+                  />Написать в MAX</a
+                >
+              </div>
             </div>
           </div>
         </div>
@@ -1084,32 +1022,5 @@
         ><span>© 2026 АвтоДеталь36. Автозапчасти в Воронеже.</span>
       </div>
     </footer>
-    <script>
-      const pickupLocations = [
-        {
-          city: "Воронеж",
-          address: "ул. Саврасова, 86, офис 2",
-          mapUrl: "https://yandex.ru/map-widget/v1/?ll=39.217176%2C51.611271&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgo1MjQ4NzczMTk2Ej_QoNC-0YHRgdC40Y8sINCS0L7RgNC-0L3QtdC2LCDRg9C70LjRhtCwINCh0LDQstGA0LDRgdC-0LLQsCwgODYiCg1i3hxCFfFxTkI%2C&z=16.49",
-        },
-        {
-          city: "Новая Усмань",
-          address: "ул. Ленина, 177, офис 5",
-          mapUrl: "https://yandex.ru/map-widget/v1/?ll=39.453421%2C51.663693&mode=whatshere&whatshere%5Bpoint%5D=39.448424%2C51.663550&whatshere%5Bzoom%5D=17&z=17.04",
-        },
-      ];
-      const locationButtons = document.querySelectorAll("[data-location]");
-      locationButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-          if (button.getAttribute("aria-pressed") === "true") return;
-          const location = pickupLocations[Number(button.dataset.location)];
-          const map = document.getElementById("pickup-map");
-          map.src = location.mapUrl;
-          map.title = `Пункт получения: ${location.city}, ${location.address}`;
-          locationButtons.forEach((item) => {
-            item.setAttribute("aria-pressed", String(item === button));
-          });
-        });
-      });
-    </script>
   </body>
 </html>
