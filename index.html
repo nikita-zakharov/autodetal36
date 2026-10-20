@@ -468,9 +468,6 @@
       .footer a {
         color: #526273;
       }
-      .mobile-cta {
-        display: none;
-      }
       @media (max-width: 900px) {
         .navlinks {
           display: none;
@@ -574,29 +571,6 @@
           align-items: flex-start;
           flex-direction: column;
         }
-        .mobile-cta {
-          display: flex;
-          position: fixed;
-          z-index: 10;
-          bottom: 10px;
-          left: 12px;
-          right: 12px;
-          gap: 8px;
-          padding: 8px;
-          background: #ffffffed;
-          border: 1px solid #d9e1e8;
-          border-radius: 15px;
-          backdrop-filter: blur(12px);
-          box-shadow: 0 6px 24px #233b5015;
-        }
-        .mobile-cta .btn {
-          flex: 1;
-          padding: 12px 9px;
-          font-size: 13px;
-        }
-        .footer {
-          padding-bottom: 90px;
-        }
       }
 
       :root {
@@ -686,7 +660,13 @@
         }
       }
       @media (max-width: 650px) {
-        .navright .btn:first-child {
+        .topbar {
+          position: static;
+        }
+        html {
+          scroll-padding-top: 0;
+        }
+        .navright {
           display: none;
         }
         .navright .btn {
@@ -716,18 +696,6 @@
         }
         h1 {
           font-size: 36px;
-        }
-      }
-      @media (max-width: 560px) {
-        body {
-          padding-bottom: 72px;
-        }
-        .mobile-cta {
-          bottom: max(10px, env(safe-area-inset-bottom));
-        }
-        .mobile-cta .btn {
-          min-height: 44px;
-          white-space: normal;
         }
       }
       @media (prefers-reduced-motion: reduce) {
@@ -1116,27 +1084,6 @@
         ><span>© 2026 АвтоДеталь36. Автозапчасти в Воронеже.</span>
       </div>
     </footer>
-    <div class="mobile-cta">
-      <a
-        class="btn btn-ghost"
-        href="#contacts"
-        title="Контакты будут добавлены перед публикацией"
-        ><span class="btn-icon btn-icon-phone" aria-hidden="true"></span
-        >Позвонить</a
-      ><a
-        class="btn btn-primary"
-        href="#contacts"
-        rel="noreferrer"
-        target="_blank"
-        title="Контакты будут добавлены перед публикацией"
-        ><img
-          class="btn-icon"
-          src="assets/icons/MAX.svg"
-          alt=""
-          aria-hidden="true"
-        />Написать в MAX</a
-      >
-    </div>
     <script>
       const pickupLocations = [
         {
