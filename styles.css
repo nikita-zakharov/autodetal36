@@ -144,15 +144,9 @@ a {
   height: 100%;
   background:
     linear-gradient(90deg, #f5f7fa00, #f5f7fa80),
-    url("https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1500&q=85")
-      center/cover;
+    url("/assets/hero-bg.png") center/cover;
   opacity: 0.4;
-  mask-image: linear-gradient(
-    90deg,
-    transparent 0%,
-    black 35%,
-    black 100%
-  );
+  mask-image: linear-gradient(90deg, transparent 0%, black 35%, black 100%);
 }
 .hero-grid {
   position: relative;

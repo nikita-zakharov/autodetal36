@@ -1,0 +1,17 @@
+{
+  "name": "autodetal36",
+  "version": "1.0.0",
+  "description": "Сайт-визитка по подбору автозапчастей в Воронеже",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "private": true,
+  "devDependencies": {
+    "vite": "^7.3.7"
+  }
+}
