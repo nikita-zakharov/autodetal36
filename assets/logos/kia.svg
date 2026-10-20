@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="120" height="60" viewBox="0 0 120 60" role="img" aria-labelledby="title">
-  <title id="title">Kia</title>
-  <g fill="#202b36">
-    <path d="M12 18h7v15l19-15h11L28 35l20 12H36L19 37v10h-7Z"/>
-    <path d="M42 18h15v20l25-20h26v29h-7V25h-6L69 47H58l27-23H64v23H50V25h-8Z"/>
-  </g>
-</svg>

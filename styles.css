@@ -307,7 +307,7 @@ h1 em {
   padding: 12px;
 }
 .brand-tile img {
-  height: 34px;
+  height: 48px;
   width: 100%;
   max-width: 88px;
   object-fit: contain;
@@ -316,6 +316,16 @@ h1 em {
   font-size: 12px;
   color: #536474;
   font-weight: 750;
+}
+.category-tile {
+  text-align: center;
+  min-width: 0;
+}
+.category-tile img {
+  height: 58px;
+}
+.category-tile span {
+  overflow-wrap: anywhere;
 }
 .steps {
   background: var(--soft-bg);
@@ -518,9 +528,6 @@ h1 em {
   .brand-tile {
     min-height: 82px;
     padding: 9px;
-  }
-  .brand-tile img {
-    height: 28px;
   }
   .step {
     grid-template-columns: 42px 1fr;
