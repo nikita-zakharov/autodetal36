@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>АвтоДеталь36</title>
+  <rect width="64" height="64" rx="12" fill="#fff"/>
+  <path d="M25 8h14l21 48H42L32 30 22 56H4Z" fill="#073b60"/>
+  <path d="M31 36h2l1 5h-4Zm-2 10h6l2 10H27Z" fill="#ffb52b"/>
+</svg>
