@@ -386,8 +386,8 @@ h1 em {
   object-fit: contain;
 }
 .brand-tile img {
-  height: 40px;
-  max-width: 88px;
+  height: 64px;
+  max-width: 128px;
 }
 .tile span {
   font-weight: 750;
@@ -408,14 +408,15 @@ h1 em {
   background: #fff;
 }
 .category-tile img {
-  height: 70px;
-  max-width: 104px;
+  height: 110px;
+  max-width: 160px;
 }
 .category-tile span {
   font-size: 13px;
   color: var(--text);
 }
 .category-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 16px;
 }
 .steps {
@@ -635,6 +636,9 @@ h1 em {
   .tile-grid {
     grid-template-columns: repeat(4, 1fr);
   }
+  .category-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
   .cta-panel {
     align-items: flex-start;
     flex-direction: column;
@@ -711,7 +715,10 @@ h1 em {
     gap: 12px;
   }
   .category-tile img {
-    height: 60px;
+    height: 100px;
+  }
+  .category-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .step {
     grid-template-columns: 42px 1fr;
