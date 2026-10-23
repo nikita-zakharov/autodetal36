@@ -3,3 +3,4 @@ assets/logos/README.md
 node_modules/
 dist/
 .htaccess
+/TODO.md
