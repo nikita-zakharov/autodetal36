@@ -10,7 +10,7 @@
     />
     <link rel="canonical" href="https://autodetal36.ru/" />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://autodetal36.ru/" />
     <meta property="og:locale" content="ru_RU" />
@@ -531,6 +531,27 @@
               allowfullscreen
               referrerpolicy="no-referrer-when-downgrade"
             ></iframe>
+            <figure class="pickup-photo">
+              <button
+                class="pickup-photo-open"
+                type="button"
+                aria-label="Увеличить фотографию места самовывоза"
+                aria-haspopup="dialog"
+                aria-controls="pickup-photo-dialog"
+              >
+                <img
+                  src="assets/location-photo.png"
+                  alt="Павильоны перед жилым домом на улице Саврасова, 86 — место самовывоза заказов"
+                  width="1824"
+                  height="1368"
+                  loading="lazy"
+                />
+              </button>
+              <figcaption>
+                <h3>Место самовывоза</h3>
+                <p>Рядом с ЖК «Мандарин».</p>
+              </figcaption>
+            </figure>
           </article>
         </div>
       </section>
@@ -589,5 +610,62 @@
         >
       </div>
     </footer>
+    <dialog
+      class="photo-dialog"
+      id="pickup-photo-dialog"
+      aria-label="Фотография места самовывоза рядом с ЖК «Мандарин»"
+    >
+      <button
+        class="photo-dialog-close"
+        type="button"
+        aria-label="Закрыть фотографию"
+        autofocus
+      >
+        ×
+      </button>
+      <img
+        src="assets/location-photo.png"
+        alt="Место самовывоза: Воронеж, ул. Саврасова, 86, павильон 2, рядом с ЖК «Мандарин»"
+        width="1824"
+        height="1368"
+        loading="lazy"
+      />
+    </dialog>
+    <script type="module">
+      const photoDialog = document.querySelector("#pickup-photo-dialog");
+      async function closePhoto() {
+        if (!photoDialog.open || photoDialog.classList.contains("is-closing"))
+          return;
+        photoDialog.classList.add("is-closing");
+        await Promise.allSettled(
+          photoDialog.getAnimations().map((animation) => animation.finished),
+        );
+        photoDialog.close();
+        photoDialog.classList.remove("is-closing");
+      }
+      document
+        .querySelector(".pickup-photo-open")
+        .addEventListener("click", () => {
+          photoDialog.showModal();
+        });
+      document
+        .querySelector(".photo-dialog-close")
+        .addEventListener("click", closePhoto);
+      photoDialog.addEventListener("cancel", (event) => {
+        event.preventDefault();
+        closePhoto();
+      });
+      photoDialog.addEventListener("click", (event) => {
+        if (event.target !== photoDialog) return;
+        const bounds = photoDialog.getBoundingClientRect();
+        if (
+          event.clientX < bounds.left ||
+          event.clientX > bounds.right ||
+          event.clientY < bounds.top ||
+          event.clientY > bounds.bottom
+        )
+          closePhoto();
+      });
+    </script>
   </body>
 </html>
