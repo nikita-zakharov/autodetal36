@@ -1,85 +1,87 @@
+import { withBase } from "../utils/paths";
+
 export const brands = [
   {
     name: "Lada",
-    image: "/assets/logos/lada.png",
+    image: withBase("/assets/logos/lada.png"),
   },
   {
     name: "Toyota",
-    image: "/assets/logos/toyota-logo.png",
+    image: withBase("/assets/logos/toyota-logo.png"),
   },
   {
     name: "BMW",
-    image: "/assets/logos/bmw-logo.png",
+    image: withBase("/assets/logos/bmw-logo.png"),
   },
   {
     name: "Mazda",
-    image: "/assets/logos/mazda-logo.png",
+    image: withBase("/assets/logos/mazda-logo.png"),
   },
   {
     name: "Kia",
-    image: "/assets/logos/kia-logo.png",
+    image: withBase("/assets/logos/kia-logo.png"),
   },
   {
     name: "Hyundai",
-    image: "/assets/logos/hyundai-logo.png",
+    image: withBase("/assets/logos/hyundai-logo.png"),
   },
   {
     name: "Volkswagen",
-    image: "/assets/logos/volkswagen-logo.png",
+    image: withBase("/assets/logos/volkswagen-logo.png"),
   },
   {
     name: "Mercedes-Benz",
-    image: "/assets/logos/mercedes-benz-logo.png",
+    image: withBase("/assets/logos/mercedes-benz-logo.png"),
   },
   {
     name: "Chevrolet",
-    image: "/assets/logos/chevrolet-logo.png",
+    image: withBase("/assets/logos/chevrolet-logo.png"),
   },
   {
     name: "Ford",
-    image: "/assets/logos/ford-logo.png",
+    image: withBase("/assets/logos/ford-logo.png"),
   },
   {
     name: "Honda",
-    image: "/assets/logos/honda-logo.png",
+    image: withBase("/assets/logos/honda-logo.png"),
   },
   {
     name: "Nissan",
-    image: "/assets/logos/nissan-logo.png",
+    image: withBase("/assets/logos/nissan-logo.png"),
   },
 ];
 export const categories = [
   {
     name: "Тормозные колодки",
-    image: "/assets/categories/brake-pads.webp",
+    image: withBase("/assets/categories/brake-pads.webp"),
   },
   {
     name: "Запчасти для ТО",
-    image: "/assets/categories/maintenance-parts.webp",
+    image: withBase("/assets/categories/maintenance-parts.webp"),
   },
   {
     name: "Тормозные диски",
-    image: "/assets/categories/brake-discs.webp",
+    image: withBase("/assets/categories/brake-discs.webp"),
   },
   {
     name: "Подвеска",
-    image: "/assets/categories/suspension.webp",
+    image: withBase("/assets/categories/suspension.webp"),
   },
   {
     name: "Рулевое управление",
-    image: "/assets/categories/steering.webp",
+    image: withBase("/assets/categories/steering.webp"),
   },
   {
     name: "Двигатель",
-    image: "/assets/categories/engine.webp",
+    image: withBase("/assets/categories/engine.webp"),
   },
   {
     name: "Электрика",
-    image: "/assets/categories/electrics.webp",
+    image: withBase("/assets/categories/electrics.webp"),
   },
   {
     name: "Кузовные",
-    image: "/assets/categories/body-parts.webp",
+    image: withBase("/assets/categories/body-parts.webp"),
   },
 ];
 export const benefits = [
@@ -87,7 +89,7 @@ export const benefits = [
     title: "Ищем по каталогам поставщиков",
     description:
       "Проверяем доступные предложения в разных каталогах, чтобы найти подходящую деталь.",
-    icon: "/assets/icons/search.svg",
+    icon: withBase("/assets/icons/search.svg"),
   },
   {
     title: "Сравниваем цены",
@@ -99,7 +101,7 @@ export const benefits = [
     title: "Проверяем совместимость по VIN",
     description:
       "Уточняем данные автомобиля и проверяем, подходит ли запчасть, прежде чем согласовать заказ.",
-    icon: "/assets/icons/check-circle.svg",
+    icon: withBase("/assets/icons/check-circle.svg"),
   },
 ];
 export const steps = [
