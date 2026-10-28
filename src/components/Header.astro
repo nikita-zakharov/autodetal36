@@ -1,0 +1,17 @@
+---
+import Brand from "./Brand.astro";
+import ContactLinks from "./ContactLinks.astro";
+---
+
+<header class="topbar">
+  <div class="wrap nav">
+    <Brand />
+    <nav aria-label="Разделы сайта" class="navlinks">
+      <a href="#advantages">Преимущества</a><a href="#how">Как проходит заказ</a
+      ><a href="#pickup">Самовывоз</a>
+    </nav>
+    <div class="navright">
+      <ContactLinks />
+    </div>
+  </div>
+</header>

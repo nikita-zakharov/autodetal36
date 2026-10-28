@@ -1,0 +1,24 @@
+---
+import { contacts } from "../data/site";
+interface Props {
+  phoneLabel?: string;
+}
+const { phoneLabel = contacts.phone } = Astro.props;
+---
+
+<a
+  class="btn btn-primary"
+  href={contacts.phoneHref}
+  title={`Позвонить ${contacts.phone}`}
+  ><span class="btn-icon btn-icon-phone" aria-hidden="true"></span>{
+    phoneLabel
+  }</a
+>
+<a class="btn btn-ghost" href={contacts.maxUrl} rel="noreferrer" target="_blank"
+  ><img
+    class="btn-icon"
+    src="/assets/icons/MAX.svg"
+    alt=""
+    aria-hidden="true"
+  />Написать в MAX</a
+>

@@ -1,0 +1,28 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import PhotoDialog from "../components/PhotoDialog.astro";
+import Hero from "../components/sections/Hero.astro";
+import Advantages from "../components/sections/Advantages.astro";
+import Brands from "../components/sections/Brands.astro";
+import Categories from "../components/sections/Categories.astro";
+import OrderSteps from "../components/sections/OrderSteps.astro";
+import Pickup from "../components/sections/Pickup.astro";
+import ContactSection from "../components/sections/ContactSection.astro";
+---
+
+<BaseLayout>
+  <Header />
+  <main id="top">
+    <Hero />
+    <Advantages />
+    <Brands />
+    <Categories />
+    <OrderSteps />
+    <Pickup />
+    <ContactSection />
+  </main>
+  <Footer />
+  <PhotoDialog />
+</BaseLayout>

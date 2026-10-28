@@ -1,0 +1,17 @@
+---
+import SectionHeading from "../SectionHeading.astro";
+import BenefitCard from "../BenefitCard.astro";
+import { benefits } from "../../data/content";
+---
+
+<section class="section advantages" id="advantages">
+  <div class="wrap">
+    <SectionHeading kicker="Преимущества" title="Экономим ваше время на поиске">
+      Вам не нужно самостоятельно изучать разные каталоги и сравнивать
+      предложения — мы сделаем это за вас.
+    </SectionHeading>
+    <div class="benefits">
+      {benefits.map((item) => <BenefitCard {...item} />)}
+    </div>
+  </div>
+</section>

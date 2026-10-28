@@ -1,0 +1,20 @@
+---
+import SectionHeading from "../SectionHeading.astro";
+import ImageTile from "../ImageTile.astro";
+import { brands } from "../../data/content";
+---
+
+<section class="section brands" id="brands">
+  <div class="wrap">
+    <SectionHeading
+      kicker="Популярные марки"
+      title="Запчасти для популярных марок автомобилей"
+    >
+      Работаем с запросами на запчасти для популярных марок. Наличие и цену
+      конкретной детали уточним у поставщиков.
+    </SectionHeading>
+    <div class="tile-grid brand-grid">
+      {brands.map((item) => <ImageTile {...item} kind="brand" />)}
+    </div>
+  </div>
+</section>

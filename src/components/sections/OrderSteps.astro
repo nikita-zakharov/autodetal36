@@ -1,0 +1,21 @@
+---
+import SectionHeading from "../SectionHeading.astro";
+import OrderStep from "../OrderStep.astro";
+import { steps } from "../../data/content";
+---
+
+<section class="section steps" id="how">
+  <div class="wrap">
+    <SectionHeading kicker="Порядок работы" title="Как проходит заказ">
+      Отправьте запрос — мы проверим совместимость, сравним цены и расскажем,
+      когда можно получить запчасть.
+    </SectionHeading>
+    <div class="steps-list">
+      {
+        steps.map((item, index) => (
+          <OrderStep {...item} number={String(index + 1).padStart(2, "0")} />
+        ))
+      }
+    </div>
+  </div>
+</section>

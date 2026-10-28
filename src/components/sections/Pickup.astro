@@ -1,0 +1,72 @@
+---
+import SectionHeading from "../SectionHeading.astro";
+import { contacts } from "../../data/site";
+---
+
+<section class="section" id="pickup">
+  <div class="wrap">
+    <SectionHeading kicker="Самовывоз и доставка" title="Где получить заказ"
+      >Бесплатная доставка по Воронежу при заказе от 1000&nbsp;₽.</SectionHeading
+    >
+    <article class="location">
+      <div class="location-info">
+        <div class="kicker">
+          <svg
+            class="location-pin"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            aria-hidden="true"
+          >
+            <path d="M20 10c0 6-8 11-8 11S4 16 4 10a8 8 0 1 1 16 0Z"></path>
+            <circle cx="12" cy="10" r="2.5"></circle>
+          </svg>
+          <span>Пункт выдачи</span>
+        </div>
+        <h3>{contacts.address}</h3>
+        <p>{contacts.city}</p>
+        <a
+          class="btn btn-ghost"
+          href={contacts.routeUrl}
+          target="_blank"
+          rel="noreferrer"
+          >Построить маршрут <span aria-hidden="true">↗</span></a
+        >
+      </div>
+      <iframe
+        class="location-map"
+        id="pickup-map"
+        src={contacts.mapUrl}
+        title={`Пункт получения в Воронеже: ${contacts.address}`}
+        width="1160"
+        height="360"
+        loading="lazy"
+        allowfullscreen
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <figure class="pickup-photo">
+        <button
+          class="pickup-photo-open"
+          type="button"
+          aria-label="Увеличить фотографию места самовывоза"
+          aria-haspopup="dialog"
+          aria-controls="pickup-photo-dialog"
+        >
+          <img
+            src="/assets/location-photo.png"
+            alt="Павильоны перед жилым домом на улице Саврасова, 86 — место самовывоза заказов"
+            width="1824"
+            height="1368"
+            loading="lazy"
+          />
+        </button>
+        <figcaption>
+          <h3>Место самовывоза</h3>
+          <p>Рядом с ЖК «Мандарин».</p>
+        </figcaption>
+      </figure>
+    </article>
+  </div>
+</section>

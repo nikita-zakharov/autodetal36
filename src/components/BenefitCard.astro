@@ -1,0 +1,21 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  icon: string | null;
+}
+const { title, description, icon } = Astro.props;
+---
+
+<article class="benefit">
+  <div class="iconbox">
+    {
+      icon ? (
+        <img src={icon} width="24" height="24" alt="" aria-hidden="true" />
+      ) : (
+        "₽"
+      )
+    }
+  </div>
+  <h3>{title}</h3><p>{description}</p>
+</article>

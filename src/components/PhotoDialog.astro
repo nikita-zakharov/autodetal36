@@ -1,0 +1,26 @@
+---
+import { contacts } from "../data/site";
+---
+
+<dialog
+  class="photo-dialog"
+  id="pickup-photo-dialog"
+  aria-label="Фотография места самовывоза рядом с ЖК «Мандарин»"
+>
+  <button
+    class="photo-dialog-close"
+    type="button"
+    aria-label="Закрыть фотографию"
+    autofocus
+  >
+    ×
+  </button>
+  <img
+    src="/assets/location-photo.png"
+    alt={`Место самовывоза: ${contacts.city}, ${contacts.address}, рядом с ЖК «Мандарин»`}
+    width="1824"
+    height="1368"
+    loading="lazy"
+  />
+</dialog>
+<script src="../scripts/photo-dialog.js"></script>

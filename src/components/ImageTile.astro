@@ -1,0 +1,19 @@
+---
+interface Props {
+  name: string;
+  image: string;
+  kind: "brand" | "category";
+}
+const { name, image, kind } = Astro.props;
+---
+
+<div class:list={["tile", `${kind}-tile`]}>
+  <img
+    src={image}
+    alt={kind === "brand" ? `Логотип ${name}` : ""}
+    loading="lazy"
+    width={kind === "category" ? 96 : undefined}
+    height={kind === "category" ? 72 : undefined}
+  />
+  <span>{name}</span>
+</div>

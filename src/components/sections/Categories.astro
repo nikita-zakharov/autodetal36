@@ -1,0 +1,25 @@
+---
+import SectionHeading from "../SectionHeading.astro";
+import ImageTile from "../ImageTile.astro";
+import { categories } from "../../data/content";
+---
+
+<section
+  class="section categories"
+  id="categories"
+  aria-labelledby="categories-title"
+>
+  <div class="wrap">
+    <SectionHeading
+      kicker="Категории запчастей"
+      title="Какие запчасти можно заказать"
+      id="categories-title"
+    >
+      Подберём детали для вашего автомобиля. Наличие и цену уточним у
+      поставщиков.
+    </SectionHeading>
+    <div class="tile-grid category-grid">
+      {categories.map((item) => <ImageTile {...item} kind="category" />)}
+    </div>
+  </div>
+</section>

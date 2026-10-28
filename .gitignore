@@ -1,6 +1,10 @@
 .DS_Store
-assets/logos/README.md
+public/assets/logos/README.md
 node_modules/
 dist/
 .htaccess
 /TODO.md
+
+.astro/
+
+/landing-text.txt
